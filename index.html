@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>超声波聊天 - Chaos Chat</title>
+    
+    <!-- PWA支持 -->
+    <meta name="theme-color" content="#2196F3">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="超声波聊天">
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- 图标 -->
+    <link rel="icon" type="image/png" sizes="192x192" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyIiBoZWlnaHQ9IjE5MiIgdmlld0JveD0iMCAwIDE5MiAxOTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxOTIiIGhlaWdodD0iMTkyIiByeD0iMjQiIGZpbGw9IiMyMTk2RjMiLz4KPHN2ZyB4PSI0OCIgeT0iNDgiIHdpZHRoPSI5NiIgaGVpZ2h0PSI5NiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJ3aGl0ZSI+CjxwYXRoIGQ9Ik0yMSAxNXYtMmMwLTIuMjEtMS43OS00LTQtNEg5djJoOGMxLjEgMCAyIC45IDIgMnYyaDJ6TTEzIDE3djJoLTJjLTEuMSAwLTItLjktMi0ydi0yaDJ2Mmg0em0tOC0yVjkuNUMxNSA5LjUgMTUgMTUgMTUgMTVoMlYxMGMwLTMuODYtMy4xNC03LTctN3MtNyAzLjE0LTcgN3Y1eiIvPgo8L3N2Zz4KPC9zdmc+">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <!-- 头部状态栏 -->
+        <header class="header">
+            <h1>超声波聊天</h1>
+            <div class="status-bar">
+                <div class="status-indicator" id="ultrasonicStatus">
+                    <span class="indicator-dot"></span>
+                    <span id="statusText">初始化中...</span>
+                </div>
+                <button id="settingsBtn" class="icon-btn">⚙️</button>
+            </div>
+        </header>
+
+        <!-- 主界面 -->
+        <main class="main-content">
+            <!-- 雷达探测界面 -->
+            <div id="radarView" class="radar-container">
+                <div class="radar-circle">
+                    <div class="radar-center" id="selfCircle">
+                        <div class="user-avatar">我</div>
+                    </div>
+                    <div class="radar-sweep"></div>
+                    <!-- 发现的用户会动态添加到这里 -->
+                </div>
+                <div class="radar-info">
+                    <p>正在探测附近用户...</p>
+                    <div class="detected-count">发现用户：<span id="userCount">0</span></div>
+                </div>
+            </div>
+
+            <!-- 聊天界面（初始隐藏） -->
+            <div id="chatView" class="chat-container hidden">
+                <div class="chat-header">
+                    <button id="backBtn" class="icon-btn">← 返回</button>
+                    <div class="chat-title">
+                        <span id="chatTitle">聊天室</span>
+                        <span id="chatType" class="chat-type">公开</span>
+                    </div>
+                    <div class="chat-actions">
+                        <button id="privacyToggle" class="privacy-btn">🔓</button>
+                        <button id="inviteBtn" class="icon-btn">👥</button>
+                    </div>
+                </div>
+                
+                <div class="messages-container" id="messagesContainer">
+                    <!-- 消息会动态添加到这里 -->
+                </div>
+                
+                <div class="input-container">
+                    <input type="text" id="messageInput" placeholder="输入消息..." maxlength="200">
+                    <button id="sendBtn" class="send-btn">发送</button>
+                </div>
+            </div>
+        </main>
+
+        <!-- 设置面板 -->
+        <div id="settingsPanel" class="settings-panel hidden">
+            <div class="settings-content">
+                <div class="settings-header">
+                    <h3>设置</h3>
+                    <button id="closeSettings" class="icon-btn">✕</button>
+                </div>
+                <div class="settings-body">
+                    <div class="setting-item">
+                        <label>用户名称</label>
+                        <input type="text" id="usernameInput" placeholder="输入您的名称" maxlength="20">
+                    </div>
+                    <div class="setting-item">
+                        <label>超声波频率</label>
+                        <select id="frequencySelect">
+                            <option value="high">高频模式 (18.7/19.3 kHz)</option>
+                            <option value="low">低频模式 (17.5/18.1 kHz)</option>
+                        </select>
+                    </div>
+                    <div class="setting-item">
+                        <label>音量调节</label>
+                        <input type="range" id="volumeSlider" min="0" max="100" value="80">
+                        <span id="volumeValue">80%</span>
+                    </div>
+                    <div class="setting-item">
+                        <label>自动发现</label>
+                        <label class="switch">
+                            <input type="checkbox" id="autoDiscovery" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 连接请求弹窗 -->
+        <div id="connectionModal" class="modal hidden">
+            <div class="modal-content">
+                <h3>连接请求</h3>
+                <p id="connectionMessage"></p>
+                <div class="modal-actions">
+                    <button id="acceptBtn" class="btn-primary">接受</button>
+                    <button id="rejectBtn" class="btn-secondary">拒绝</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Toast通知 -->
+        <div id="toast" class="toast hidden">
+            <span id="toastMessage"></span>
+        </div>
+    </div>
+
+    <!-- 脚本文件 -->
+    <script src="ultrasonic.js"></script>
+    <script src="chat.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 

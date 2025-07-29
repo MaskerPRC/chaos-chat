@@ -1,0 +1,75 @@
+{
+    "name": "超声波聊天 - Chaos Chat",
+    "short_name": "超声波聊天",
+    "description": "基于超声波通信的近距离聊天应用",
+    "version": "1.0.0",
+    "start_url": "./index.html",
+    "display": "standalone",
+    "orientation": "portrait",
+    "theme_color": "#2196F3",
+    "background_color": "#fafafa",
+    "scope": "./",
+    "lang": "zh-CN",
+    "categories": ["social", "communication"],
+    "icons": [
+        {
+            "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzIiIGhlaWdodD0iNzIiIHZpZXdCb3g9IjAgMCA3MiA3MiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjcyIiBoZWlnaHQ9IjcyIiByeD0iOCIgZmlsbD0iIzIxOTZGMyIvPgo8c3ZnIHg9IjE4IiB5PSIxOCIgd2lkdGg9IjM2IiBoZWlnaHQ9IjM2IiB2aWV3Qm94PSIwIDAgMjQgMjQiIGZpbGw9IndoaXRlIj4KPHBhdGggZD0iTTIxIDE1di0yYzAtMi4yMS0xLjc5LTQtNC00SDl2Mmg4YzEuMSAwIDIgLjkgMiAydjJoMnpNMTMgMTd2MmgtMmMtMS4xIDAtMi0uOS0yLTJ2LTJoMnYyaDR6bS04LTJWOS41QzE1IDkuNSAxNSAxNSAxNSAxNWgyVjEwYzAtMy44Ni0zLjE0LTctNy03cy03IDMuMTQtNyA3djV6Ii8+Cjwvc3ZnPgo8L3N2Zz4K",
+            "sizes": "72x72",
+            "type": "image/svg+xml"
+        },
+        {
+            "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOTYiIGhlaWdodD0iOTYiIHZpZXdCb3g9IjAgMCA5NiA5NiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9Ijk2IiBoZWlnaHQ9Ijk2IiByeD0iMTIiIGZpbGw9IiMyMTk2RjMiLz4KPHN2ZyB4PSIyNCIgeT0iMjQiIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJ3aGl0ZSI+CjxwYXRoIGQ9Ik0yMSAxNXYtMmMwLTIuMjEtMS43OS00LTQtNEg5djJoOGMxLjEgMCAyIC45IDIgMnYyaDJ6TTEzIDE3djJoLTJjLTEuMSAwLTItLjktMi0ydi0yaDJ2Mmg0em0tOC0yVjkuNUMxNSA5LjUgMTUgMTUgMTUgMTVoMlYxMGMwLTMuODYtMy4xNC03LTctN3MtNyAzLjE0LTcgN3Y1eiIvPgo8L3N2Zz4KPC9zdmc+Cg==",
+            "sizes": "96x96",
+            "type": "image/svg+xml"
+        },
+        {
+            "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQ0IiBoZWlnaHQ9IjE0NCIgdmlld0JveD0iMCAwIDE0NCAxNDQiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxNDQiIGhlaWdodD0iMTQ0IiByeD0iMTgiIGZpbGw9IiMyMTk2RjMiLz4KPHN2ZyB4PSIzNiIgeT0iMzYiIHdpZHRoPSI3MiIgaGVpZ2h0PSI3MiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJ3aGl0ZSI+CjxwYXRoIGQ9Ik0yMSAxNXYtMmMwLTIuMjEtMS43OS00LTQtNEg5djJoOGMxLjEgMCAyIC45IDIgMnYyaDJ6TTEzIDE3djJoLTJjLTEuMSAwLTItLjktMi0ydi0yaDJ2Mmg0em0tOC0yVjkuNUMxNSA5LjUgMTUgMTUgMTUgMTVoMlYxMGMwLTMuODYtMy4xNC03LTctN3MtNyAzLjE0LTcgN3Y1eiIvPgo8L3N2Zz4KPC9zdmc+Cg==",
+            "sizes": "144x144",
+            "type": "image/svg+xml"
+        },
+        {
+            "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyIiBoZWlnaHQ9IjE5MiIgdmlld0JveD0iMCAwIDE5MiAxOTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxOTIiIGhlaWdodD0iMTkyIiByeD0iMjQiIGZpbGw9IiMyMTk2RjMiLz4KPHN2ZyB4PSI0OCIgeT0iNDgiIHdpZHRoPSI5NiIgaGVpZ2h0PSI5NiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJ3aGl0ZSI+CjxwYXRoIGQ9Ik0yMSAxNXYtMmMwLTIuMjEtMS43OS00LTQtNEg5djJoOGMxLjEgMCAyIC45IDIgMnYyaDJ6TTEzIDE3djJoLTJjLTEuMSAwLTItLjktMi0ydi0yaDJ2Mmg0em0tOC0yVjkuNUMxNSA5LjUgMTUgMTUgMTUgMTVoMlYxMGMwLTMuODYtMy4xNC03LTctN3MtNyAzLjE0LTcgN3Y1eiIvPgo8L3N2Zz4KPC9zdmc+Cg==",
+            "sizes": "192x192",
+            "type": "image/svg+xml",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDUxMiA1MTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiByeD0iNjQiIGZpbGw9IiMyMTk2RjMiLz4KPHN2ZyB4PSIxMjgiIHk9IjEyOCIgd2lkdGg9IjI1NiIgaGVpZ2h0PSIyNTYiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0id2hpdGUiPgo8cGF0aCBkPSJNMjEgMTV2LTJjMC0yLjIxLTEuNzktNC00LTRIOXYyaDhjMS4xIDAgMiAuOSAyIDJ2Mmgyek0xMyAxN3YyaC0yYy0xLjEgMC0yLS45LTItMnYtMmgydjJoNHptLTgtMlY5LjVDMTUgOS41IDE1IDE1IDE1IDE1aDJWMTBjMC0zLjg2LTMuMTQtNy03LTdzLTcgMy4xNC03IDd2NXoiLz4KPC9zdmc+Cjwvc3ZnPgo=",
+            "sizes": "512x512",
+            "type": "image/svg+xml"
+        }
+    ],
+    "screenshots": [
+        {
+            "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzc1IiBoZWlnaHQ9IjY2NyIgdmlld0JveD0iMCAwIDM3NSA2NjciIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIzNzUiIGhlaWdodD0iNjY3IiByeD0iMjQiIGZpbGw9IiNmYWZhZmEiLz4KPHJlY3QgeD0iMTYiIHk9IjE2IiB3aWR0aD0iMzQzIiBoZWlnaHQ9IjgwIiByeD0iOCIgZmlsbD0iI2ZmZmZmZiIvPgo8dGV4dCB4PSIxODcuNSIgeT0iNjYiIGZpbGw9IiMyMTk2RjMiIGZvbnQtZmFtaWx5PSItYXBwbGUtc3lzdGVtLCBCbGlua01hY1N5c3RlbUZvbnQsICdTZWdvZSBVSScsIFJvYm90bywgT3h5Z2VuLCBVYnVudHUsIENhbnRhcmVsbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMCIgZm9udC13ZWlnaHQ9IjYwMCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+6LaE5aOw5rOi6IGK6YGQ5aSqPC90ZXh0Pgo8Y2lyY2xlIGN4PSIxODcuNSIgY3k9IjM3NSIgcj0iMTUwIiBmaWxsPSJub25lIiBzdHJva2U9IiMyMTk2RjMiIHN0cm9rZS13aWR0aD0iMiIvPgo8Y2lyY2xlIGN4PSIxODcuNSIgY3k9IjM3NSIgcj0iMzAiIGZpbGw9IiMyMTk2RjMiLz4KPHRleHQgeD0iMTg3LjUiIHk9IjM4NCIgZmlsbD0id2hpdGUiIGZvbnQtZmFtaWx5PSItYXBwbGUtc3lzdGVtLCBCbGlua01hY1N5c3RlbUZvbnQsICdTZWdvZSBVSScsIFJvYm90bywgT3h5Z2VuLCBVYnVudHUsIENhbnRhcmVsbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZm9udC13ZWlnaHQ9IjYwMCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+5oiRPC90ZXh0Pgo8Y2lyY2xlIGN4PSIxMjcuNSIgY3k9IjI3NSIgcj0iMjAiIGZpbGw9IiNGRjQwODEiLz4KPGNpcmNsZSBjeD0iMjg3LjUiIGN5PSI0MjUiIHI9IjIwIiBmaWxsPSIjRkY0NDgxIi8+Cjx0ZXh0IHg9IjE4Ny41IiB5PSI1NzAiIGZpbGw9IiM3NTc1NzUiIGZvbnQtZmFtaWx5PSItYXBwbGUtc3lzdGVtLCBCbGlua01hY1N5c3RlbUZvbnQsICdTZWdvZSBVSScsIFJvYm90bywgT3h5Z2VuLCBVYnVudHUsIENhbnRhcmVsbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNiIgdGV4dC1hbmNob3I9Im1pZGRsZSI+562j5Zyo5o6i5rWL6ZmE6L+R55695oi344CA44CA8L3RleHQ+Cjx0ZXh0IHg9IjE4Ny41IiB5PSI1OTUiIGZpbGw9IiMyMTk2RjMiIGZvbnQtZmFtaWx5PSItYXBwbGUtc3lzdGVtLCBCbGlua01hY1N5c3RlbUZvbnQsICdTZWdvZSBVSScsIFJvYm90bywgT3h5Z2VuLCBVYnVudHUsIENhbnRhcmVsbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxOCIgZm9udC13ZWlnaHQ9IjYwMCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+5Y+R546w55So5oi344CA54CA8L3RleHQ+Cjwvc3ZnPgo=",
+            "sizes": "375x667",
+            "type": "image/svg+xml",
+            "form_factor": "narrow",
+            "label": "雷达探测界面"
+        }
+    ],
+    "features": [
+        "Cross Platform",
+        "fast",
+        "simple"
+    ],
+    "dir": "ltr",
+    "prefer_related_applications": false,
+    "shortcuts": [
+        {
+            "name": "快速开始聊天",
+            "short_name": "开始聊天",
+            "description": "快速启动并开始探测附近用户",
+            "url": "./index.html",
+            "icons": [
+                {
+                    "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOTYiIGhlaWdodD0iOTYiIHZpZXdCb3g9IjAgMCA5NiA5NiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9Ijk2IiBoZWlnaHQ9Ijk2IiByeD0iMTIiIGZpbGw9IiMyMTk2RjMiLz4KPHN2ZyB4PSIyNCIgeT0iMjQiIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJ3aGl0ZSI+CjxwYXRoIGQ9Ik0yMSAxNXYtMmMwLTIuMjEtMS43OS00LTQtNEg5djJoOGMxLjEgMCAyIC45IDIgMnYyaDJ6TTEzIDE3djJoLTJjLTEuMSAwLTItLjktMi0ydi0yaDJ2Mmg0em0tOC0yVjkuNUMxNSA5LjUgMTUgMTUgMTUgMTVoMlYxMGMwLTMuODYtMy4xNC03LTctN3MtNyAzLjE0LTcgN3Y1eiIvPgo8L3N2Zz4KPC9zdmc+Cg==",
+                    "sizes": "96x96"
+                }
+            ]
+        }
+    ],
+    "edge_side_panel": {
+        "preferred_width": 400
+    }
+} 
