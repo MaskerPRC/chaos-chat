@@ -37,7 +37,11 @@ class UltrasonicComm {
         
         // 数据包格式
         this.packetHeader = [1, 0, 1, 0, 1, 1, 0, 1]; // 同步头
-        this.maxPayloadLength = 32; // 最大载荷长度
+        this.maxPayloadLength = 256; // 最大载荷长度
+        
+        console.log('=== UltrasonicComm初始化 - 版本2024 ===');
+        console.log('maxPayloadLength:', this.maxPayloadLength);
+        console.log('=====================================');
         
         // 回调函数
         this.onDataReceived = null;
@@ -280,6 +284,10 @@ class UltrasonicComm {
     async transmitData(data) {
         if (!this.isInitialized || this.isTransmitting) return false;
         
+        console.log('=== TRANSMIT DATA START - 版本2024 ===');
+        console.log('准备发送数据:', data);
+        console.log('当前maxPayloadLength:', this.maxPayloadLength);
+        
         try {
             // 确保音频上下文处于运行状态
             if (this.audioContext.state === 'suspended') {
@@ -348,12 +356,26 @@ class UltrasonicComm {
     
     // 数据包编码
     encodePacket(data) {
-        const payload = new TextEncoder().encode(JSON.stringify(data));
+        console.log('=== ENCODE PACKET START ===');
+        console.log('输入数据:', data);
+        console.log('maxPayloadLength:', this.maxPayloadLength);
+        
+        const jsonString = JSON.stringify(data);
+        console.log('JSON字符串:', jsonString);
+        console.log('JSON字符串长度:', jsonString.length);
+        
+        const payload = new TextEncoder().encode(jsonString);
+        console.log('编码后字节数:', payload.length);
+        
+        console.log('检查:', payload.length, '>', this.maxPayloadLength, '=', payload.length > this.maxPayloadLength);
         
         // 限制载荷长度
         if (payload.length > this.maxPayloadLength) {
-            throw new Error('数据包过大');
+            console.error('数据包过大!', payload.length, '>', this.maxPayloadLength);
+            throw new Error(`数据包过大: ${payload.length}字节 > ${this.maxPayloadLength}字节`);
         }
+        
+        console.log('=== ENCODE PACKET SUCCESS ===');
         
         // 构建数据包：头部 + 长度 + 载荷 + CRC
         const packet = new Uint8Array(this.packetHeader.length + 1 + payload.length + 1);
@@ -648,7 +670,13 @@ class UltrasonicComm {
     }
     
     getUsername() {
-        return localStorage.getItem('username') || '用户' + this.myUserId.substr(0, 4);
+        const storedUsername = localStorage.getItem('username');
+        const defaultUsername = '用户' + this.myUserId.substr(0, 4);
+        const username = storedUsername || defaultUsername;
+        
+        console.log('当前用户名:', username, '长度:', username.length, '字节数:', new TextEncoder().encode(username).length);
+        
+        return username;
     }
     
     calculateCRC(data) {

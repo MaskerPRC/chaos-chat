@@ -3,9 +3,9 @@
  * 提供缓存策略和离线功能支持
  */
 
-const CACHE_NAME = 'chaos-chat-v1.0.0';
-const STATIC_CACHE_NAME = 'chaos-chat-static-v1.0.0';
-const DYNAMIC_CACHE_NAME = 'chaos-chat-dynamic-v1.0.0';
+const CACHE_NAME = 'chaos-chat-v1.0.1';
+const STATIC_CACHE_NAME = 'chaos-chat-static-v1.0.1';
+const DYNAMIC_CACHE_NAME = 'chaos-chat-dynamic-v1.0.1';
 
 // 需要缓存的静态资源
 const STATIC_ASSETS = [
